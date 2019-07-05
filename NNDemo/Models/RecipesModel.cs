@@ -17,7 +17,11 @@ namespace NN.Models
         
         [JsonProperty(PropertyName = "message" , Order = 1 , NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }
+
+        [JsonProperty(PropertyName = "required", Order = 5, NullValueHandling = NullValueHandling.Ignore)]
+        public string RequiredMessage { get; set; }
         
+
 
         public class Recipe
         {
@@ -33,6 +37,11 @@ namespace NN.Models
             public DateTime created_at { get; set; }
             [JsonIgnore]
             public DateTime updated_at { get; set; }
+        }
+
+        public RecipesModel()
+        {
+
         }
 
         private RecipesModel(List<Recipe> Recipes)
